@@ -3,27 +3,25 @@ var grantHealth = 10;
 var wins = 0;
 var playing = true;
 
-// var prompt1 = prompt("Would you like to play an RPG?");
+var prompt0 = prompt("Would you like to play an RPG?", "yes or no");
 
-// if (prompt1 === "yes") {
-//   var user = prompt("Enter your name.");
-// }
-
-
+if (prompt0 === "yes") {
+var user = prompt("what is your name?");
 while (playing) {
   userHealth -= Math.floor((Math.random() * 2) + 1);
   grantHealth -= Math.floor((Math.random() * 2) + 1);
-  console.log(userHealth);
-  console.log(grantHealth + "g");
+  console.log(user + " has " + userHealth + " health left.");
+  console.log("Grant the mighty Chicken has " + grantHealth + " health left.");
   if (grantHealth <= 0) {
-    wins++;
     grantHealth = 10;
+    wins++;
   }
   if (userHealth <= 0) {
     console.log("The game is over.");
     playing = false;
   }
-  if (wins = 3) {
+  if (wins === 3) {
     playing = false;
   }
+}
 }
