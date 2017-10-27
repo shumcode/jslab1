@@ -78,7 +78,7 @@ function winMessage() {
 
 function getDamage() {
   if (weapon === "sword") {
-    userDamage = Math.floor((Math.random() * 10) + 3)
+    userDamage = Math.floor((Math.random() * 10) + 3);
   }
   if (weapon === "bow") {
     userDamage = Math.floor((Math.random() * 15) + 1);
