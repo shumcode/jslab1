@@ -87,6 +87,7 @@ function getDamage() {
     userDamage = Math.floor((Math.random() * 7) + 5);
   }
   enemyDamage = Math.floor((Math.random() * 5) + 1);
+  userDamage = Math.floor((Math.random() * 5) + 1);
   enemyHealth -= userDamage;
   userHealth -= enemyDamage;
 }
