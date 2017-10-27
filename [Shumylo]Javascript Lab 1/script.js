@@ -6,9 +6,7 @@ var prompt0 = prompt("Would you like to play an RPG?", "yes or no").toLowerCase(
 
 if (prompt0 === "yes") {
   var user = prompt("what is your name?");
-  if (prompt0 = true) {
-    console.log("The battle begins!");
-  }
+  console.log("The battle begins!");
   while (playing) {
     userHealth -= Math.floor((Math.random() * 2) + 1);
     grantHealth -= Math.floor((Math.random() * 2) + 1);
