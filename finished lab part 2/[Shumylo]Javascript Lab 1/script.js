@@ -34,6 +34,9 @@ function startCombat() {
   while (playing) {
     quit = prompt("Would you like to Attack or Quit?", "Attack or Quit").toLowerCase();
     if (quit === "quit") {
+      userHealth = 40;
+      enemyHealth = 10;
+      wins = 3;
       break;
     }
     if (quit === "attack") {
@@ -55,10 +58,16 @@ function startCombat() {
       }
       if (userHealth <= 0) {
         console.log("The game is over. " + whichEnemy + " has won!");
-        playing = false;
+        userHealth = 40;
+        enemyHealth = 10;
+        wins = 3;
+        break;
       }
       if (wins === 0) {
         console.log(user + " has defeated " + whichEnemy + " with " + userHealth + " health left!");
+        userHealth = 40;
+        enemyHealth = 10;
+        wins = 3;
         break;
       }
     }
