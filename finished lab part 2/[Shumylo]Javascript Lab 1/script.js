@@ -78,13 +78,6 @@ function winMessage() {
   console.log("You have defeated " + whichEnemy + "!" +  " You need " + wins + " win(s) left!");
 }
 
-// function whichEnemy() {
-//   enemies = Math.floor((Math.random() * 2) + 1);
-//   if (enemies = 2) {
-//     enemyHealth = 20;
-//   }
-// }
-
 function getDamage() {
   if (weapon === "sword") {
     userDamage = Math.floor((Math.random() * 10) + 3);
