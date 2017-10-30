@@ -37,6 +37,7 @@ function startCombat() {
       userHealth = 40;
       enemyHealth = 10;
       wins = 3;
+      console.log("See you later, try again!");
       break;
     }
     if (quit === "attack") {
