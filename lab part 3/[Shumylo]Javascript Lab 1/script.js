@@ -13,10 +13,6 @@ var character = {
     if (this.healsRemaining === 0) {
       return;
     }
-    if (this.health >= 40) {
-      console.log("Your health is at max!");
-      return;
-    }
     this.health += Math.floor((Math.random() * 10) + 1);
     this.healsRemaining--;
   }
