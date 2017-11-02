@@ -17,7 +17,36 @@ function startGame() {
     health: 10
   }
   document.getElementsByClassName("hide")[0].setAttribute("class", "show");
+  playerstats();
+  statsInfo(gameText);
   }
+
+function statsInfo(gameText) {
+  var gamemessage = document.getElementsByClassName("gamemessage")[0];
+  gamemessage.innerText = gameText;
+  }
+function playerstats() {
+  var nametext = document.getElementsByClassName("nametext")[0];
+  var healthtext = document.getElementsByClassName("healthtext")[0];
+  var healstext = document.getElementsByClassName("healstext")[0];
+  var winstext = document.getElementsByClassName("winstext")[0];
+  var eNametext = document.getElementsByClassName("eNametext")[0];
+  var eHealthtext = document.getElementsByClassName("eHealthtext")[0];
+  var name = document.getElementsByClassName("name")[0];
+  var health = document.getElementById("health").value = character.health;
+  var eName = document.getElementsByClassName("eName")[0];
+  var eHealth = document.getElementById("eHealth").value = grant.health;
+  var wins = document.getElementById("wins").value = character.wins;
+  var healsRemaining = document.getElementById("heals").value = character.healsRemaining;
+  nametext.innerText = "Name";
+  name.innerText = character.name;
+  healstext.innerText = "Heals Left";
+  healthtext.innerText = "Health";
+  eNametext.innerText = "Enemy Name";
+  eName.innerText = grant.name;
+  eHealthtext.innerText = "Enemy Health";
+  winstext.innerText = "Wins";
+}
 
 function startCombat(choice) {
   var gameText = "";
@@ -67,30 +96,4 @@ function startCombat(choice) {
   }
   playerstats();
   statsInfo(gameText);
-  function statsInfo(gameText) {
-    var gamemessage = document.getElementsByClassName("gamemessage")[0];
-    gamemessage.innerText = gameText;
-    }
-  function playerstats() {
-    var nametext = document.getElementsByClassName("nametext")[0];
-    var healthtext = document.getElementsByClassName("healthtext")[0];
-    var healstext = document.getElementsByClassName("healstext")[0];
-    var winstext = document.getElementsByClassName("winstext")[0];
-    var eNametext = document.getElementsByClassName("eNametext")[0];
-    var eHealthtext = document.getElementsByClassName("eHealthtext")[0];
-    var name = document.getElementsByClassName("name")[0];
-    var health = document.getElementById("health").value = character.health;
-    var eName = document.getElementsByClassName("eName")[0];
-    var eHealth = document.getElementById("eHealth").value = grant.health;
-    var wins = document.getElementById("wins").value = character.wins;
-    var healsRemaining = document.getElementById("heals").value = character.healsRemaining;
-    nametext.innerText = "Name";
-    name.innerText = character.name;
-    healstext.innerText = "Heals Left";
-    healthtext.innerText = "Health";
-    eNametext.innerText = "Enemy Name";
-    eName.innerText = grant.name;
-    eHealthtext.innerText = "Enemy Health";
-    winstext.innerText = "Wins";
-  }
 }
