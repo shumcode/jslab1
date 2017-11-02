@@ -8,11 +8,14 @@
   <title>Javascript Lab 1</title>
 </head>
 <body>
-  <!-- <button value="start" onclick="startGame()">Start</button> -->
+  <div class ="startcontainer">
+    <button value="start" onclick="startGame()">Start</button>
+  </div>  
+  <div class="hide">
   <div class="buttoncontainer">
     <button value="attack" onclick="startCombat(this.value);">Attack</button>
     <button value="heal" onclick="startCombat(this.value);">Heal</button>
-    <button value="quit" onclick="startCombat(this.value);">Quit</button>
+    <button value="quit" onclick="startCombat(this.value);" id ="quit">Quit</button>
   </div>
 
 
@@ -30,7 +33,7 @@
       </div>
       <div class="healthholder">
         <div class="healthtext"></div>
-        <div class="health"></div>
+        <progress value="40" min="0" max="40" id="health"></progress>
       </div>
       <div class="healsholder">
         <div class="healstext"></div>
@@ -52,6 +55,7 @@
         <div class="eHealth"></div>
       </div>
     </div>
+  </div>
   </div>
   <script src="script.js"></script>
 </body>

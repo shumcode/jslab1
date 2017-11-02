@@ -2,6 +2,19 @@ body {
   background-color: lightblue;
 }
 
+.startcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .buttoncontainer {
   margin-top: 50px;
   display: flex;
@@ -11,21 +24,66 @@ body {
 button {
   padding: 75px;
   margin-left: 5px;
+  background-color: #F3BC6A;
+  border-style: solid;
 }
 
 .stats {
-  height: 300px;
-  border: 1px solid black;
   display: flex;
-  justify-content: center;
 }
 
 .playerstats {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  border: 5px solid black;
+  border-right: 0px;
+}
+
+.enemystats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  border: 5px solid black;
+  border-left: 0px;
+}
+
+.healthholder, .nameholder, .healsholder, .winsholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25%;
+  margin-top: 20px;
+}
+
+.winsholder {
+  margin-bottom: 20px;
+}
+
+.eHealthholder, .eNameholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.nametext, .healstext, .healthtext, .winstext, .eNametext, .eHealthtext {
+  color: #F3BC6A;
+  font-size: 1.7em;
+}
+
+.name, .healsRemaining, .health, .wins, .eName, .eHealth {
+  font-weight: 900;
+}
+
+.gamemessage {
+  font-weight: 900;
 }
 
 .gamemessageBL {
   display: flex;
   justify-content: center;
 }
+

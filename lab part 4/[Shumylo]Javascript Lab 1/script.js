@@ -1,22 +1,22 @@
-
-var userChoice = null;
+var character = null;
+var grant = null;
 
 function startGame() {
-}
-
-var character = {
-  wins: 5,
+character = {
+  wins: 0,
   health: 40,
   healsRemaining: 2,
-  name: "Christian",
+  name: prompt("Whats your name?"),
   heal: function() {
     this.health += Math.floor((Math.random() * 10) + 1);
     this.healsRemaining--;
   }
 }
-var grant = {
+grant = {
   name: "Grant Chirpus",
   health: 10
+}
+document.getElementsByClassName("hide")[0].setAttribute("class", "show");
 }
 
 function startCombat(choice) {
@@ -37,21 +37,28 @@ function startCombat(choice) {
     }
   }
   if (choice === "quit") {
-    gameText = "You got beat so badly you had to quit the game!";
-    return;
+    gameText = "You got beat so badly you had to quit the game, click again to exit.";
+    grant.health = 10;
+    character.health = 40;
+    character.wins = 0;
+    character.healsRemaining = 2;
+    var quit = document.getElementById("quit");
+    quit.onclick = function() {
+      document.getElementsByClassName("show")[0].setAttribute("class", "hide");
+    }
   }
-  if (character.wins === 0) {
+  if (character.wins === 5) {
     grant.health = 10;
     character.health = 40;
     gameText = "You beat " + enemy.name + " and won the entire vidya game!";
-  }
-  if (character.health <= 0) {
-    gameText = "The game is over. " + grant.name + " has won!";
   }
   if (grant.health <= 0) {
     character.wins++;
     gameText = grant.name + " lost a game. You need to win " + character.wins + " more games to triumph!";
     grant.health = 10;
+  }
+  if (character.health <= 0) {
+    gameText = "The game is over. " + grant.name + " has won!";
   }
   playerstats();
   statsInfo(gameText);
@@ -67,7 +74,7 @@ function startCombat(choice) {
     var eNametext = document.getElementsByClassName("eNametext")[0];
     var eHealthtext = document.getElementsByClassName("eHealthtext")[0];
     var name = document.getElementsByClassName("name")[0];
-    var health = document.getElementsByClassName("health")[0];
+    var health = document.getElementById("health").value = character.health;
     var eName = document.getElementsByClassName("eName")[0];
     var eHealth = document.getElementsByClassName("eHealth")[0];
     var wins = document.getElementsByClassName("wins")[0];
@@ -77,7 +84,6 @@ function startCombat(choice) {
     healstext.innerText = "Heals Left";
     healsRemaining.innerText = character.healsRemaining;
     healthtext.innerText = "Health";
-    health.innerText = character.health;
     eNametext.innerText = "Name";
     eName.innerText = grant.name;
     eHealthtext.innerText = "Health";
@@ -86,80 +92,3 @@ function startCombat(choice) {
     wins.innerText = character.wins;
   }
 }
-
-
-
-
-//   var character = {
-//   wins: 5,
-//   health: 40,
-//   healsRemaining: 2,
-//   name: prompt("Enter your name!"),
-//   generateAttackDamage: function() {
-//     return Math.floor((Math.random() * 3) + 1);
-//   },
-//   heal: function() {
-//     if (this.healsRemaining === 0) {
-//       return;
-//     }
-//     this.health += Math.floor((Math.random() * 10) + 1);
-//     this.healsRemaining--;
-//   }
-// }
-
-// var grant = {
-//   name: "Grant Chirpus",
-//   health: 10,
-//   generateAttackDamage: function() {
-//     return Math.floor((Math.random() * 3) + 1);
-//   }
-// }
-
-
-
-
-// if (character.name != "") {
-//   startCombat();
-// }
-
-// function startCombat(choice) {
-//   while (playing) {
-//     var userChoice = prompt("Would you like to Attack, Heal, or Quit?").toLowerCase();
-//     if (userChoice === "heal") {
-//       character.heal();
-//       console.log("You have " + character.healsRemaining + " heal(s) remaining!");
-//       console.log(grant.name + " has " + grant.health + " health left.");
-//     }
-//     if (userChoice === "attack") {
-//       grant.health -= grant.generateAttackDamage();
-//       console.log(grant.name + " has " + grant.health + " health left.");
-//     }
-//     if (userChoice === "quit") {
-//       console.log("The game is over. " + grant.name + " has beaten you so bad that you quit like a baby!");
-//       grant.health = 10;
-//       break;
-//     }
-//     character.health -= character.generateAttackDamage();
-//     console.log(character.name + " has " + character.health + " health left!");
-//     if (character.health <= 0) {
-//       console.log("The game is over. " + grant.name + " has won!");
-//       break;
-//     }
-//     if (grant.health <= 0) {
-//       grant.health = 10;
-//       character.wins--;
-//       winMessage();
-//     }
-//     if (character.wins === 0) {
-//       console.log("You beat Grant Chirpus!");
-//       grant.health = 10;
-//       character.health = 40;
-//       character.wins = 5;
-//       break;
-//     }
-//   }
-// }
-
-// function winMessage() {
-//   console.log("You have defeated " + grant.name + "!" +  " You need " + character.wins + " win(s) left!");
-// }
