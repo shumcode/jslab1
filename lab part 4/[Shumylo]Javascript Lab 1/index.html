@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <title>Javascript Lab 1</title>
 </head>
@@ -37,11 +38,11 @@
       </div>
       <div class="healsholder">
         <div class="healstext"></div>
-        <div class="healsRemaining"></div>
+        <progress value="2" min="0" max="2" id="heals"></progress>
       </div>
       <div class="winsholder">
         <div class="winstext"></div>
-        <div class="wins"></div>
+        <progress value="0" min="0" max="5" id="wins"></progress>
       </div>
     </div>
 
@@ -52,7 +53,7 @@
       </div>
       <div class="eHealthholder">
         <div class="eHealthtext"></div>
-        <div class="eHealth"></div>
+        <progress value="10" min="0" max="10" id="eHealth"></progress>
       </div>
     </div>
   </div>

@@ -13,7 +13,7 @@ character = {
   }
 }
 grant = {
-  name: "Grant Chirpus",
+  name: prompt("What's the enemy's name?"),
   health: 10
 }
 document.getElementsByClassName("hide")[0].setAttribute("class", "show");
@@ -22,18 +22,22 @@ document.getElementsByClassName("hide")[0].setAttribute("class", "show");
 function startCombat(choice) {
   var gameText = "";
   if (choice === "attack") {
+    if (character.health > 0 && character.wins < 5) { 
     character.health -= Math.floor((Math.random() * 3) + 1);
     grant.health -= Math.floor((Math.random() * 3) + 1);
     gameText = grant.name + " has " + grant.health + " health left! " + character.name + " has " + character.health + " health left!";
+    }
   }
   if (choice === "heal") {
+    if (character.health > 0) {
     if (character.healsRemaining !== 0) {
     character.heal();
     character.health -= Math.floor((Math.random() * 3) + 1);
     gameText = grant.name + " has " + grant.health + " health left! " + character.name + " has " + character.health + " health left! " + "You have " + character.healsRemaining + " heal(s) remaining!";
     }
-    if (character.healsRemaining <= 0) {
-      gameText = "You cannot heal!";
+  }
+    if (character.healsRemaining <= 0 && character.health < 0) {
+      gameText = "You cannot heal, try attacking!";
     }
   }
   if (choice === "quit") {
@@ -50,15 +54,16 @@ function startCombat(choice) {
   if (character.wins === 5) {
     grant.health = 10;
     character.health = 40;
+    character.wins = 0;
     gameText = "You beat " + enemy.name + " and won the entire vidya game!";
+  }
+  if (character.health <= 0) {
+    gameText = "The game is over. " + grant.name + " has won!";
   }
   if (grant.health <= 0) {
     character.wins++;
     gameText = grant.name + " lost a game. You need to win " + character.wins + " more games to triumph!";
     grant.health = 10;
-  }
-  if (character.health <= 0) {
-    gameText = "The game is over. " + grant.name + " has won!";
   }
   playerstats();
   statsInfo(gameText);
@@ -76,19 +81,16 @@ function startCombat(choice) {
     var name = document.getElementsByClassName("name")[0];
     var health = document.getElementById("health").value = character.health;
     var eName = document.getElementsByClassName("eName")[0];
-    var eHealth = document.getElementsByClassName("eHealth")[0];
-    var wins = document.getElementsByClassName("wins")[0];
-    var healsRemaining = document.getElementsByClassName("healsRemaining")[0];
+    var eHealth = document.getElementById("eHealth").value = grant.health;
+    var wins = document.getElementById("wins").value = character.wins;
+    var healsRemaining = document.getElementById("heals").value = character.healsRemaining;
     nametext.innerText = "Name";
     name.innerText = character.name;
     healstext.innerText = "Heals Left";
-    healsRemaining.innerText = character.healsRemaining;
     healthtext.innerText = "Health";
-    eNametext.innerText = "Name";
+    eNametext.innerText = "Enemy Name";
     eName.innerText = grant.name;
-    eHealthtext.innerText = "Health";
-    eHealth.innerText = grant.health;
+    eHealthtext.innerText = "Enemy Health";
     winstext.innerText = "Wins";
-    wins.innerText = character.wins;
   }
 }

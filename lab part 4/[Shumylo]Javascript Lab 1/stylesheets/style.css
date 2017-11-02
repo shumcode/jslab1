@@ -1,3 +1,7 @@
+* {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
 body {
   background-color: lightblue;
 }
@@ -5,6 +9,7 @@ body {
 .startcontainer {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .hide {
@@ -21,7 +26,15 @@ body {
   justify-content: center;
 }
 
-button {
+.startcontainer button {
+  padding: 75px;
+  margin-left: 5px;
+  background-color: #F3BC6A;
+  border-style: solid;
+  font-size: 1.7em;
+}
+
+.buttoncontainer button {
   padding: 75px;
   margin-left: 5px;
   background-color: #F3BC6A;
@@ -70,7 +83,7 @@ button {
 }
 
 .nametext, .healstext, .healthtext, .winstext, .eNametext, .eHealthtext {
-  color: #F3BC6A;
+  color: green;
   font-size: 1.7em;
 }
 
