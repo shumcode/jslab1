@@ -1,18 +1,31 @@
-.buttoncontainer {
-  height: 25px;
-}
-
-button {
-  display: inline-block;
-  margin: 0 auto;
-}
-
 body {
   background-color: lightblue;
 }
 
+.buttoncontainer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 75px;
+  margin-left: 5px;
+}
+
 .stats {
+  height: 300px;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.playerstats {
+  display: flex;
+  justify-content: center;
+}
+
+.gamemessageBL {
   display: flex;
   justify-content: center;
 }

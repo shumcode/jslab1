@@ -10,23 +10,47 @@
 <body>
   <!-- <button value="start" onclick="startGame()">Start</button> -->
   <div class="buttoncontainer">
-    <button value="attack" onclick="startCombat(this.value)">Attack</button>
-    <button value="heal" onclick="startCombat(this.value)">Heal</button>
-    <button value="quit" onclick="startCombat(this.value)">Quit</button>
+    <button value="attack" onclick="startCombat(this.value);">Attack</button>
+    <button value="heal" onclick="startCombat(this.value);">Heal</button>
+    <button value="quit" onclick="startCombat(this.value);">Quit</button>
   </div>
-  <div class="gamemessage">
-    <p class="">awesome</p>
-  </div>
-  <div class="stats">
-    <div class="playerstats">
-      <div class="name"></div>
-      <div class="health"></div>
-      <div class="eName"></div>
-      <div class="eHealth"></div>
-      <div class="healsRemaining"></div>
-      <div class="wins"></div>
+
+
+    <div class="gamemessageBL">
+      <p class="gamemessage"></p>
     </div>
+
+
+  <div class="stats">
+
+    <div class="playerstats">
+      <div class="nameholder">
+        <div class="nametext"></div>
+        <div class="name"></div>
+      </div>
+      <div class="healthholder">
+        <div class="healthtext"></div>
+        <div class="health"></div>
+      </div>
+      <div class="healsholder">
+        <div class="healstext"></div>
+        <div class="healsRemaining"></div>
+      </div>
+      <div class="winsholder">
+        <div class="winstext"></div>
+        <div class="wins"></div>
+      </div>
+    </div>
+
     <div class="enemystats">
+      <div class="eNameholder">
+        <div class="eNametext"></div>
+        <div class="eName"></div>
+      </div>
+      <div class="eHealthholder">
+        <div class="eHealthtext"></div>
+        <div class="eHealth"></div>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>
