@@ -2,40 +2,40 @@ var character = null;
 var grant = null;
 
 function startGame() {
-character = {
-  wins: 0,
-  health: 40,
-  healsRemaining: 2,
-  name: prompt("Whats your name?"),
-  heal: function() {
-    this.health += Math.floor((Math.random() * 10) + 1);
-    this.healsRemaining--;
+  character = {
+    wins: 0,
+    health: 40,
+    healsRemaining: 2,
+    name: prompt("Whats your name?"),
+    heal: function() {
+      this.health += Math.floor((Math.random() * 10) + 1);
+      this.healsRemaining--;
+    }
   }
-}
-grant = {
-  name: prompt("What's the enemy's name?"),
-  health: 10
-}
-document.getElementsByClassName("hide")[0].setAttribute("class", "show");
-}
+  grant = {
+    name: prompt("What's the enemy's name?"),
+    health: 10
+  }
+  document.getElementsByClassName("hide")[0].setAttribute("class", "show");
+  }
 
 function startCombat(choice) {
   var gameText = "";
   if (choice === "attack") {
     if (character.health > 0 && character.wins < 5) { 
-    character.health -= Math.floor((Math.random() * 3) + 1);
-    grant.health -= Math.floor((Math.random() * 3) + 1);
-    gameText = grant.name + " has " + grant.health + " health left! " + character.name + " has " + character.health + " health left!";
+      character.health -= Math.floor((Math.random() * 3) + 1);
+      grant.health -= Math.floor((Math.random() * 3) + 1);
+      gameText = grant.name + " has " + grant.health + " health left! " + character.name + " has " + character.health + " health left!";
     }
   }
   if (choice === "heal") {
     if (character.health > 0) {
-    if (character.healsRemaining !== 0) {
-    character.heal();
-    character.health -= Math.floor((Math.random() * 3) + 1);
-    gameText = grant.name + " has " + grant.health + " health left! " + character.name + " has " + character.health + " health left! " + "You have " + character.healsRemaining + " heal(s) remaining!";
+      if (character.healsRemaining !== 0) {
+      character.heal();
+      character.health -= Math.floor((Math.random() * 3) + 1);
+      gameText = grant.name + " has " + grant.health + " health left! " + character.name + " has " + character.health + " health left! " + "You have " + character.healsRemaining + " heal(s) remaining!";
+      }
     }
-  }
     if (character.healsRemaining <= 0 && character.health < 0) {
       gameText = "You cannot heal, try attacking!";
     }

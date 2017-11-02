@@ -9,7 +9,6 @@ body {
 .startcontainer {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .hide {
@@ -21,7 +20,7 @@ body {
 }
 
 .buttoncontainer {
-  margin-top: 50px;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
 }
@@ -43,6 +42,8 @@ body {
 
 .stats {
   display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .playerstats {
@@ -52,6 +53,7 @@ body {
   width: 50%;
   border: 5px solid black;
   border-right: 0px;
+  padding-bottom: 20px;
 }
 
 .enemystats {
@@ -71,14 +73,14 @@ body {
   margin-top: 20px;
 }
 
-.winsholder {
-  margin-bottom: 20px;
-}
-
 .eHealthholder, .eNameholder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 25%;
+}
+
+.eNameholder {
   margin-top: 20px;
 }
 
@@ -87,8 +89,14 @@ body {
   font-size: 1.7em;
 }
 
-.name, .healsRemaining, .health, .wins, .eName, .eHealth {
+.name, .eName {
   font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+progress {
+  margin-top: 20px;
 }
 
 .gamemessage {
@@ -98,5 +106,7 @@ body {
 .gamemessageBL {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
